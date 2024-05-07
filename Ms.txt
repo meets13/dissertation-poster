@@ -1,0 +1,65 @@
+IF [Winning Team] = [Batting Team] THEN [DeathOverRuns]
+ELSE - [DeathOverRuns]
+END
+
+
+IF [Batting Team] = [Team1] THEN [DeathOverWickets]
+ELSE - [DeathOverWickets]
+END
+
+
+IF [Winning Team] = [Batting Team] THEN [PowerplayRuns]
+ELSE - [PowerplayRuns]
+END
+
+
+IF [Winning Team] = [Batting Team] THEN [IsWicketDelivery]
+ELSE - [IsWicketDelivery]
+END
+
+
+IF [Winning Team] != "NA"
+THEN TRUE 
+ELSE FALSE
+END
+
+
+IF [Winning Team] = [Team1] THEN [Team2] 
+ELSE [Team1] 
+END
+
+
+IF  [Batting Team] = [Team1] THEN "Home" 
+ELSE "Away" END
+
+
+IF [Overs] <= 6 THEN [Total Run]
+ELSE 0 END
+
+
+IF [Extra Type] != "wides" AND [Extra Type] != "noballs" 
+THEN 1 ELSE 0 END
+
+
+IF [Overs] >= 15 THEN [IsWicketDelivery]
+ELSE 0 END
+
+IF [Overs] >= 15 THEN [Total Run]
+ELSE 0 END
+
+[Date] = { FIXED : MAX([Date])}
+
+
+[Total Team Runs] / [BallsFaced] * 100
+
+
+SUM([Total Run])
+
+
+(SUM([IsLegalDelivery]))
+
+
+[Overs] >=15
+
+
+[Overs]<=6
